@@ -1,5 +1,5 @@
 import BackgroundGlow from "./BackgroundGlow";
-import HeroContent from "./Herocontent";
+import HeroContent from "./HeroCont"
 import HeroImage from "./HeroImage";
 
 const Hero = () => {

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 type ButtonProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   variant?: "primary" | "secondary";
 };
 
