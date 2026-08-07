@@ -3,6 +3,7 @@ import HeroSocial from "./HeroSocial";
 import HeroStats from "./HeroStats";
 import { motion } from "framer-motion";
 
+
 const HeroContent = () => {
   return (
     <motion.div
@@ -30,9 +31,14 @@ const HeroContent = () => {
       </p>
 
       <div className="mt-10 flex gap-5">
+        <a
+        href="/resume.pdf"
+        download="Pankaj_Kumar_Resume.pdf"
+        >
         <Button>
-          Download Resume
+            Download Resume
         </Button>
+        </a>
 
         <Button variant="secondary">
           View Projects
