@@ -13,7 +13,7 @@ const Button = ({ children, variant = "primary" }: ButtonProps) => {
 
   return (
     <button
-      className={`rounded-xl px-6 py-3 font-semibold transition-all duration-300 ${classes}`}
+      className={`cursor-pointer rounded-xl px-6 py-3 font-semibold transition-all duration-300 ${classes}`}
     >
       {children}
     </button>

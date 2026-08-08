@@ -32,10 +32,10 @@ const HeroContent = () => {
 
       <div className="mt-10 flex gap-5">
         <a
-        href="/resume.pdf"
+        href="/Pankaj_CV.pdf"
         download="Pankaj_Kumar_Resume.pdf"
         >
-        <Button>
+        <Button >
             Download Resume
         </Button>
         </a>
