@@ -53,7 +53,8 @@ const ExperienceCard = ({
           backdrop-blur-xl
           transition-all
           duration-300
-          hover:-translate-y-2
+          hover:-translate-y-3
+hover:scale-[1.02]
           hover:border-indigo-500
           hover:shadow-2xl
           hover:shadow-indigo-500/10
@@ -89,9 +90,9 @@ const ExperienceCard = ({
               className="
                 rounded-full
                 bg-indigo-500/10
-                px-4
-                py-2
-                text-sm
+                px-3
+                py-1.5
+                text-xs
                 font-medium
                 text-indigo-300
               "
