@@ -12,19 +12,19 @@ const Navbar = () => {
 
           <nav className="hidden md:flex items-center gap-10">
 
-            <a href="#" className="text-slate-300 hover:text-indigo-400">
+            <a href="#about" className="text-slate-300 hover:text-indigo-400">
               About
             </a>
 
-            <a href="#" className="text-slate-300 hover:text-indigo-400">
+            <a href="#experience" className="text-slate-300 hover:text-indigo-400">
               Experience
             </a>
 
-            <a href="#" className="text-slate-300 hover:text-indigo-400">
+            <a href="#projects" className="text-slate-300 hover:text-indigo-400">
               Projects
             </a>
 
-            <a href="#" className="text-slate-300 hover:text-indigo-400">
+            <a href="#contact" className="text-slate-300 hover:text-indigo-400">
               Contact
             </a>
 
