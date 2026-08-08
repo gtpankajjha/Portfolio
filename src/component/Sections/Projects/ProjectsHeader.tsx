@@ -7,13 +7,13 @@ const ProjectsHeader = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="mb-20 text-center"
+      className="mb-5 text-center"
     >
-      <p className="text-lg font-semibold text-indigo-400">
+      {/* <p className="text-lg font-semibold text-indigo-400">
         Projects
-      </p>
+      </p> */}
 
-      <h2 className="mt-2 text-5xl font-bold text-white">
+      <h2 className="mt-3 text-5xl font-bold text-white">
         Featured Projects
       </h2>
 

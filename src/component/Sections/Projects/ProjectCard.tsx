@@ -32,7 +32,7 @@ const ProjectCard = ({
 
         {/* Image */}
 
-        <div className="h-full min-h-[420px]">
+        <div className="h-full min-h-[400px]">
     <ProjectCarousel />
 </div>
 
