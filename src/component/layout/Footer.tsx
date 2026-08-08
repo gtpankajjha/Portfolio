@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { Mail, FileText, Heart } from "lucide-react";
+import { personalData } from "../../data/personalData";
 
 const Footer = () => {
   return (
@@ -23,7 +24,7 @@ const Footer = () => {
         <div className="mt-8 flex justify-center gap-5">
 
           <a
-            href="https://github.com/gtpankajjha"
+            href={personalData.github}
             target="_blank"
             rel="noreferrer"
             className="rounded-xl border border-slate-700 p-3 text-slate-300 transition hover:border-indigo-500 hover:text-indigo-400"
@@ -32,7 +33,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/pankaj-jha-2813b014b/"
+            href={personalData.linkedin}
             target="_blank"
             rel="noreferrer"
             className="rounded-xl border border-slate-700 p-3 text-slate-300 transition hover:border-indigo-500 hover:text-indigo-400"
@@ -48,7 +49,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="/Pankaj_CV.pdf"
+            href={personalData.resume}
             target="_blank"
             rel="noreferrer"
             className="rounded-xl border border-slate-700 p-3 text-slate-300 transition hover:border-indigo-500 hover:text-indigo-400"

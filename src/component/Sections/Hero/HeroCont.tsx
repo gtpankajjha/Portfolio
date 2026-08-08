@@ -2,6 +2,8 @@ import Button from "../../common/Button";
 import HeroSocial from "./HeroSocial";
 import HeroStats from "./HeroStats";
 import { motion } from "framer-motion";
+import { personalData } from "../../../data/personalData";
+
 
 
 const HeroContent = () => {
@@ -18,11 +20,11 @@ const HeroContent = () => {
       </p>
 
       <h1 className="text-6xl font-extrabold leading-tight text-white">
-        Pankaj Kumar
+        {personalData.name}
       </h1>
 
       <h2 className="mt-4 text-2xl text-slate-300">
-        Frontend Engineer
+         {personalData.role}
       </h2>
 
       <p className="mt-8 max-w-xl text-lg leading-8 text-slate-400">
