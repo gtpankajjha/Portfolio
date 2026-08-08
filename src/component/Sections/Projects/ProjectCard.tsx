@@ -19,7 +19,6 @@ type ProjectCardProps = {
 const ProjectCard = ({
   title,
   description,
-  image,
   technologies,
   github,
   live,
