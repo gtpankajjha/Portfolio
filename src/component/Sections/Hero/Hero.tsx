@@ -4,7 +4,7 @@ import HeroImage from "./HeroImage";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-slate-950 pt-22">
+    <section  id="home" className="relative min-h-screen overflow-hidden bg-slate-950 pt-22">
 
       <BackgroundGlow />
 
