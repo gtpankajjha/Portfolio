@@ -31,8 +31,8 @@ const ProjectCard = ({
 
         {/* Image */}
 
-        <div className="h-full min-h-[400px]">
-    <ProjectCarousel />
+     <div className="relative h-full overflow-hidden rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none">
+  <ProjectCarousel />
 </div>
 
         {/* Content */}
