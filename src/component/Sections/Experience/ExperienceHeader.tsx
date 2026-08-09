@@ -9,9 +9,9 @@ const ExperienceHeader = () => {
       viewport={{ once: true }}
       className="mb-20 text-center"
     >
-      <p className="text-lg font-semibold text-indigo-400">
+      {/* <p className="text-lg font-semibold text-indigo-400">
         Experience
-      </p>
+      </p> */}
 
       <h2 className="mt-4 text-5xl font-bold text-white">
         My Professional Journey

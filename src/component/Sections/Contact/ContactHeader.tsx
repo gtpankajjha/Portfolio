@@ -2,9 +2,9 @@ const ContactHeader = () => {
   return (
     <div className="mx-auto max-w-3xl text-center">
 
-      <p className="text-lg font-semibold text-indigo-400">
+      {/* <p className="text-lg font-semibold text-indigo-400">
         Contact
-      </p>
+      </p> */}
 
       <h2 className="mt-4 text-6xl font-extrabold text-white">
         Let's Work Together
