@@ -25,59 +25,108 @@ const ExperienceCard = ({
       className="relative pl-16"
     >
       {/* Timeline Dot */}
-  <div
-  className="
-    absolute
-    left-2
-    top-8
-    z-10
-    h-6
-    w-6
-    rounded-full
-    border-4
-    border-indigo-500
-    bg-slate-950
-    shadow-lg
-    shadow-indigo-500/70
-  "
-></div>
+      <div
+        className="
+          absolute
+          left-[18px]
+          top-8
+          h-4
+          w-4
+          rounded-full
+          border-4
+          border-white
+          bg-indigo-500
+          shadow-lg
+          shadow-indigo-500/30
+          dark:border-slate-950
+        "
+      />
 
       {/* Card */}
       <div
         className="
           rounded-3xl
           border
-          border-slate-700
-          bg-slate-900/60
+          border-slate-200
+          bg-white/80
           p-8
+          shadow-sm
           backdrop-blur-xl
           transition-all
           duration-300
           hover:-translate-y-3
-hover:scale-[1.02]
-          hover:border-indigo-500
+          hover:scale-[1.02]
+          hover:border-indigo-400
           hover:shadow-2xl
           hover:shadow-indigo-500/10
+          dark:border-slate-700
+          dark:bg-slate-900/60
+          dark:hover:border-indigo-500
         "
       >
         {/* Year */}
-        <span className="text-sm font-semibold text-indigo-400">
+        <span
+          className="
+            inline-block
+            rounded-full
+            bg-indigo-50
+            px-4
+            py-1.5
+            text-sm
+            font-semibold
+            text-indigo-600
+            dark:bg-indigo-500/10
+            dark:text-indigo-300
+          "
+        >
           {year}
         </span>
 
         {/* Company */}
-        <h3 className="mt-3 text-3xl font-bold text-white">
+        <h3
+          className="
+            mt-3
+            text-3xl
+            font-bold
+            text-slate-900
+            transition-colors
+            duration-300
+            dark:text-white
+          "
+        >
           {company}
         </h3>
 
         {/* Role */}
-        <div className="mt-5 flex items-center gap-3 text-slate-300">
+        <div
+          className="
+            mt-5
+            flex
+            items-center
+            gap-3
+            text-slate-700
+            transition-colors
+            duration-300
+            dark:text-slate-300
+          "
+        >
           <Briefcase size={18} />
           <span>{role}</span>
         </div>
 
         {/* Location */}
-        <div className="mt-3 flex items-center gap-3 text-slate-400">
+        <div
+          className="
+            mt-3
+            flex
+            items-center
+            gap-3
+            text-slate-600
+            transition-colors
+            duration-300
+            dark:text-slate-400
+          "
+        >
           <MapPin size={18} />
           <span>{location}</span>
         </div>
@@ -89,12 +138,19 @@ hover:scale-[1.02]
               key={item}
               className="
                 rounded-full
-                bg-indigo-500/10
+                border
+                border-indigo-200
+                bg-indigo-50
                 px-3
                 py-1.5
                 text-xs
                 font-medium
-                text-indigo-300
+                text-indigo-600
+                transition-colors
+                duration-300
+                dark:border-indigo-500/20
+                dark:bg-indigo-500/10
+                dark:text-indigo-300
               "
             >
               {item}

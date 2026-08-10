@@ -44,20 +44,31 @@ const experiences = [
 
 const ExperienceTimeline = () => {
   return (
-    <div className="relative mx-auto max-w-5xl">
+    <div className="relative">
+      {/* Vertical Timeline Line */}
+      <div
+        className="
+          absolute
+          bottom-8
+          left-5
+          top-8
+          w-[2px]
+          bg-slate-200
+          transition-colors
+          duration-300
+          dark:bg-slate-700
+        "
+      />
 
-      {/* Vertical Line */}
-      <div className="absolute left-5 top-8 bottom-8 w-[2px] bg-slate-700"></div>
-
+      {/* Experience Cards */}
       <div className="space-y-14">
-        {experiences.map((item, index) => (
+        {experiences.map((item) => (
           <ExperienceCard
-            key={index}
+            key={`${item.company}-${item.year}`}
             {...item}
           />
         ))}
       </div>
-
     </div>
   );
 };

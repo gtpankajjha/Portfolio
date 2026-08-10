@@ -5,7 +5,10 @@ type FloatingBadgeProps = {
   className: string;
 };
 
-const FloatingBadge = ({ text, className }: FloatingBadgeProps) => {
+const FloatingBadge = ({
+  text,
+  className,
+}: FloatingBadgeProps) => {
   return (
     <motion.div
       animate={{
@@ -16,7 +19,28 @@ const FloatingBadge = ({ text, className }: FloatingBadgeProps) => {
         repeat: Infinity,
         ease: "easeInOut",
       }}
-      className={`absolute rounded-2xl border border-slate-700/60 bg-slate-900/80 px-5 py-3 text-sm font-semibold text-white backdrop-blur-xl shadow-lg ${className}`}
+      className={`
+        absolute
+        rounded-2xl
+        border
+        border-slate-200
+        bg-white/90
+        px-5
+        py-3
+        text-sm
+        font-semibold
+        text-slate-800
+        shadow-lg
+        backdrop-blur-xl
+        transition-all
+        duration-300
+
+        dark:border-slate-700/60
+        dark:bg-slate-900/80
+        dark:text-white
+
+        ${className}
+      `}
     >
       {text}
     </motion.div>

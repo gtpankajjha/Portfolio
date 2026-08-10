@@ -15,12 +15,13 @@ const projects = [
     ],
     github: "#",
     live: "#",
+    featured: true,
   },
 ];
 
 const ProjectsGrid = () => {
   return (
-    <div className="grid gap-6">
+    <div className="grid grid-cols-1 gap-10">
       {projects.map((project) => (
         <ProjectCard
           key={project.title}

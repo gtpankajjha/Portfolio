@@ -12,32 +12,45 @@ const images = [img1, img2, img3];
 const ProjectCarousel = () => {
   return (
     <Swiper
-      className="h-full rounded-l-3xl"
+      className="h-full w-full rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none"
       modules={[Autoplay]}
       autoplay={{
         delay: 2000,
         disableOnInteraction: false,
       }}
-      loop
+      loop={true}
       slidesPerView={1}
     >
       {images.map((image, index) => (
         <SwiperSlide key={index} className="h-full">
-          <div className="relative h-full">
+          <div className="relative h-full w-full">
+            {/* Project Image */}
             <img
               src={image}
-              alt=""
+              alt={`Project screenshot ${index + 1}`}
               className="
                 h-full
+                min-h-[320px]
                 w-full
                 object-cover
-                transition-transform
-                duration-700
-                hover:scale-105
               "
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 to-transparent" />
+            {/* Image Overlay */}
+            <div
+              className="
+                pointer-events-none
+                absolute
+                inset-0
+                bg-gradient-to-t
+                from-slate-950/40
+                via-transparent
+                to-transparent
+                transition-opacity
+                duration-300
+                dark:from-slate-950/50
+              "
+            />
           </div>
         </SwiperSlide>
       ))}

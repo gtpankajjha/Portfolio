@@ -1,3 +1,4 @@
+import Container from "../../layout/Container";
 import ExperienceHeader from "./ExperienceHeader";
 import ExperienceTimeline from "./ExperienceTimeline";
 
@@ -5,15 +6,27 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="relative bg-slate-950 py-24"
+      className="
+        relative
+        overflow-hidden
+        bg-white
+        py-24
+        text-slate-900
+        transition-colors
+        duration-300
+        dark:bg-slate-950
+        dark:text-white
+      "
     >
-      <div className="mx-auto max-w-7xl px-6">
+      <Container>
+        <div className="mx-auto max-w-5xl">
+          {/* Section Header */}
+          <ExperienceHeader />
 
-        <ExperienceHeader />
-
-        <ExperienceTimeline />
-
-      </div>
+          {/* Timeline */}
+          <ExperienceTimeline />
+        </div>
+      </Container>
     </section>
   );
 };
