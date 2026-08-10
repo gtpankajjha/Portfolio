@@ -1,10 +1,10 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-
+import toast from "react-hot-toast";
 
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
-  const [sent, setSent] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     from_name: "",
@@ -21,73 +21,52 @@ const ContactForm = () => {
     }));
   };
 
- const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-  setLoading(true);
-  setSent(false);
+    setLoading(true);
 
-  try {
-    await emailjs.send(
-      "service_z1pkdrl",
-      "template_y3mjdpd",
-      {
-        name: formData.name,
-        from_name: formData.from_name,
-        subject: formData.subject,
-        from_message: formData.from_message,
-        time: new Date().toLocaleString(),
-      },
-      "4bZJpiUEFDoHLoPYY"
-    );
+    try {
+      await emailjs.send(
+        "service_z1pkdrl",
+        "template_y3mjdpd",
+        {
+          name: formData.name,
+          from_name: formData.from_name,
+          subject: formData.subject,
+          from_message: formData.from_message,
+          time: new Date().toLocaleString(),
+        },
+        "4bZJpiUEFDoHLoPYY"
+      );
 
+      // Success toast
+      toast.success(
+        "Message sent successfully! I'll get back to you soon."
+      );
 
-    // Show confirmation inside the form
-    setSent(true);
-   // Hide confirmation message after 5 seconds
-setTimeout(() => {
-  setSent(false);
-}, 5000);
-    setFormData({
-      name: "",
-      from_name: "",
-      subject: "",
-      from_message: "",
-    });
-  } catch (error) {
-    console.error("EmailJS Error:", error);
-    setSent(false);
-  } finally {
-    setLoading(false);
-  }
-};
+      // Clear form
+      setFormData({
+        name: "",
+        from_name: "",
+        subject: "",
+        from_message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+
+      toast.error(
+        "Unable to send your message. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <div
-      className="
-        rounded-3xl
-        border
-        border-slate-200
-        bg-white
-        p-8
-        shadow-xl
-        transition-all
-        duration-300
-        dark:border-slate-800
-        dark:bg-slate-900
-      "
-    >
+    <div>
       {/* Heading */}
-      <h3
-        className="
-          text-3xl
-          font-bold
-          text-slate-900
-          transition-colors
-          duration-300
-          dark:text-white
-        "
-      >
+      <h3 className="text-3xl font-bold text-slate-900 dark:text-white">
         Send Me a Message
       </h3>
 
@@ -326,29 +305,6 @@ setTimeout(() => {
           {loading ? "Sending..." : "Send Message →"}
         </button>
       </form>
-      {sent && (
-  <div
-    className="
-      mt-6
-      rounded-xl
-      border
-      border-emerald-500/30
-      bg-emerald-500/10
-      px-5
-      py-4
-      text-center
-      text-emerald-400
-    "
-  >
-    <p className="font-semibold">
-      ✅ Message sent successfully!
-    </p>
-
-    <p className="mt-1 text-sm text-emerald-300/80">
-      Thank you for reaching out. I'll get back to you as soon as possible.
-    </p>
-  </div>
-)}
     </div>
   );
 };
