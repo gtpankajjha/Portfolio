@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
-
+  const [sent, setSent] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     from_name: "",
@@ -21,45 +21,49 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = async (
-    e: React.FormEvent<HTMLFormElement>
-  ) => {
-    e.preventDefault();
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    setLoading(true);
+  setLoading(true);
+  setSent(false);
 
-    try {
-      await emailjs.send(
-        "service_z1pkdrl",
-        "template_y3mjdpd",
-        {
-          name: formData.name,
-          from_name: formData.from_name,
-          subject: formData.subject,
-          from_message: formData.from_message,
-          time: new Date().toLocaleString(),
-        },
-        "4bZJpiUEFDoHLoPYY"
-      );
+  try {
+    await emailjs.send(
+      "service_z1pkdrl",
+      "template_y3mjdpd",
+      {
+        name: formData.name,
+        from_name: formData.from_name,
+        subject: formData.subject,
+        from_message: formData.from_message,
+        time: new Date().toLocaleString(),
+      },
+      "4bZJpiUEFDoHLoPYY"
+    );
 
-      toast.success("Message sent successfully! 🚀");
+    toast.success("Message sent successfully! 🚀");
 
-      setFormData({
-        name: "",
-        from_name: "",
-        subject: "",
-        from_message: "",
-      });
-    } catch (error) {
-      console.error("EmailJS Error:", error);
+    // Show confirmation inside the form
+    setSent(true);
+   // Hide confirmation message after 5 seconds
+setTimeout(() => {
+  setSent(false);
+}, 5000);
+    setFormData({
+      name: "",
+      from_name: "",
+      subject: "",
+      from_message: "",
+    });
+  } catch (error) {
+    console.error("EmailJS Error:", error);
 
-      toast.error(
-        "Failed to send message. Please try again."
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
+    toast.error("Failed to send message. Please try again.");
+    setSent(false);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div
@@ -325,6 +329,29 @@ const ContactForm = () => {
           {loading ? "Sending..." : "Send Message →"}
         </button>
       </form>
+      {sent && (
+  <div
+    className="
+      mt-6
+      rounded-xl
+      border
+      border-emerald-500/30
+      bg-emerald-500/10
+      px-5
+      py-4
+      text-center
+      text-emerald-400
+    "
+  >
+    <p className="font-semibold">
+      ✅ Message sent successfully!
+    </p>
+
+    <p className="mt-1 text-sm text-emerald-300/80">
+      Thank you for reaching out. I'll get back to you as soon as possible.
+    </p>
+  </div>
+)}
     </div>
   );
 };
