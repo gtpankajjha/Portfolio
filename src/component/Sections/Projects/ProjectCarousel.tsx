@@ -3,54 +3,44 @@ import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 
-import img1 from "../../../assets/image/Toneop1.png";
-import img2 from "../../../assets/image/Toneop2.png";
-import img3 from "../../../assets/image/Toneop3.png";
+type ProjectCarouselProps = {
+  images: string[];
+};
 
-const images = [img1, img2, img3];
+const ProjectCarousel = ({
+  images,
+}: ProjectCarouselProps) => {
+  if (!images || images.length === 0) {
+    return (
+      <div className="flex min-h-[350px] items-center justify-center bg-slate-100 dark:bg-slate-950">
+        <p className="text-slate-500">
+          No project preview available
+        </p>
+      </div>
+    );
+  }
 
-const ProjectCarousel = () => {
   return (
     <Swiper
-      className="h-full w-full rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none"
+      className="h-full w-full"
       modules={[Autoplay]}
       autoplay={{
-        delay: 2000,
+        delay: 2500,
         disableOnInteraction: false,
       }}
-      loop={true}
+      loop={images.length > 1}
       slidesPerView={1}
     >
       {images.map((image, index) => (
-        <SwiperSlide key={index} className="h-full">
-          <div className="relative h-full w-full">
-            {/* Project Image */}
+        <SwiperSlide key={`${image}-${index}`}>
+          <div className="relative h-full min-h-[350px] w-full">
             <img
               src={image}
-              alt={`Project screenshot ${index + 1}`}
-              className="
-                h-full
-                min-h-[320px]
-                w-full
-                object-cover
-              "
+              alt={`ToneOp Eats screenshot ${index + 1}`}
+              className="h-full min-h-[350px] w-full object-cover"
             />
 
-            {/* Image Overlay */}
-            <div
-              className="
-                pointer-events-none
-                absolute
-                inset-0
-                bg-gradient-to-t
-                from-slate-950/40
-                via-transparent
-                to-transparent
-                transition-opacity
-                duration-300
-                dark:from-slate-950/50
-              "
-            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
           </div>
         </SwiperSlide>
       ))}

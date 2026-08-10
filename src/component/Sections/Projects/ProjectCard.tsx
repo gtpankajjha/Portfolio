@@ -9,7 +9,7 @@ import ProjectCarousel from "./ProjectCarousel";
 type ProjectCardProps = {
   title: string;
   description: string;
-  image: string;
+  images: string[];
   technologies: string[];
   github: string;
   live: string;
@@ -19,6 +19,7 @@ type ProjectCardProps = {
 const ProjectCard = ({
   title,
   description,
+   images,
   technologies,
   github,
   live,
@@ -52,7 +53,7 @@ const ProjectCard = ({
             md:rounded-tr-none
           "
         >
-          <ProjectCarousel />
+         <ProjectCarousel images={images} />
         </div>
 
         {/* Content */}
