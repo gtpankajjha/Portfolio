@@ -6,7 +6,9 @@ export const personalData = {
   phone: "+91 XXXXX XXXXX",
   location: "Bengaluru, India",
   summary: "Crafting fast, scalable web and mobile applications using React.js, Next.js, React Native and TypeScript.",
-
+  about_summary:", a Frontend Engineer with over 4 years of experience building responsive web and mobile applications using React.js, Next.js, React Native and TypeScript.",
+  about_para:"I enjoy solving real-world problems, building reusable components, improving application performance, and creating intuitive user experiences with clean, maintainable code.",
+  experiance:" Over 4 years of experience building scalable web and mobile applications using modern frontend technologies.",
   github: "https://github.com/gtpankajjha",
   linkedin: "https://www.linkedin.com/in/pankaj-jha-2813b014b/",
 

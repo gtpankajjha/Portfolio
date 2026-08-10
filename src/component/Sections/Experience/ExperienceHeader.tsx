@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { personalData } from "../../../data/personalData";
 
 const ExperienceHeader = () => {
   return (
@@ -43,8 +44,7 @@ const ExperienceHeader = () => {
           dark:text-slate-400
         "
       >
-        Over 4 years of experience building scalable web and
-        mobile applications using modern frontend technologies.
+        {personalData.experiance}
       </p>
     </motion.div>
   );

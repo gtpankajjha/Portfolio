@@ -57,9 +57,7 @@ const AboutContent = () => {
         <span className="font-semibold text-slate-900 dark:text-white">
           {personalData.name}
         </span>
-        , a Frontend Engineer with over 4 years of experience
-        building responsive web and mobile applications using
-        React.js, Next.js, React Native and TypeScript.
+        {personalData.about_summary}
       </p>
 
       {/* Paragraph 2 */}
@@ -74,10 +72,7 @@ const AboutContent = () => {
           dark:text-slate-400
         "
       >
-        I enjoy solving real-world problems, building reusable
-        components, improving application performance, and
-        creating intuitive user experiences with clean,
-        maintainable code.
+        {personalData.about_para}
       </p>
     </motion.div>
   );
