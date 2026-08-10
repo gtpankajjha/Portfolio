@@ -1,6 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import toast from "react-hot-toast";
+
 
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
@@ -41,7 +41,6 @@ const ContactForm = () => {
       "4bZJpiUEFDoHLoPYY"
     );
 
-    toast.success("Message sent successfully! 🚀");
 
     // Show confirmation inside the form
     setSent(true);
@@ -57,8 +56,6 @@ setTimeout(() => {
     });
   } catch (error) {
     console.error("EmailJS Error:", error);
-
-    toast.error("Failed to send message. Please try again.");
     setSent(false);
   } finally {
     setLoading(false);
